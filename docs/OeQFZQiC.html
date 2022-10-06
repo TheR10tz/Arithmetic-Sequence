@@ -1,0 +1,39 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>Arithmetic Sequence - Find the common difference (Simplified)</title>
+</head>
+<body>
+<h1>Arithmetic Sequence - Find the common difference (d)<br></h1><small><i>Simplified version</i></small><br><br>
+<br>
+Value of 1st term: <input type="text" id="value1"><br>
+Value of 2nd term: <input type="text" id="value2"><br>
+<p><button onclick="submit()">Submit!</button>
+<hr><br>
+<p>Answer:</p><pre><div id="result"></div></pre><br>
+<hr><br>
+<p>Solution:</p><pre><div id="output"></div></pre><br>
+<script type="text/javascript">
+
+function submit() {
+
+var seq1 = parseFloat(eval(document.getElementById("value1").value));
+var seq2 = parseFloat(eval(document.getElementById("value2").value));
+
+var val = 1;
+
+var o;
+var k;
+
+o = seq2-seq1;
+
+var n = "2nd term - 1st term<p>" + seq2 + " - " + seq1 + " = " + o + "</p>";
+var result = "d = "+o;
+document.getElementById("result")["innerHTML"]=result;
+document.getElementById("output")["innerHTML"]=n;
+};
+
+</script>
+
+</body>
+</html>

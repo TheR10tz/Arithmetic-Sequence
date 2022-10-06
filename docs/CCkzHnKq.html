@@ -1,0 +1,45 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+<title>Arithmetic Sequence - Find the value of (n) term</title></head><body onload="answer()" onmouseout="answer()" onkeydown="answer()">
+<form id="s"><h1>Arithmetic Sequence - Find the value of <font face=Georgia>(n)</font> term</h1><br>
+d = <input type=text id=d><br>
+val (1) = <input type=text id=val><br>
+term (n) = <input type=number id=term><br><br>
+<!--
+<p><input type="radio" name="c" id="add" checked><small>Increase (+=)</small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="c"><small>Decrease (-=)</small></p>
+-->
+</form><hr><br>
+<font face=Georgia id=output1></font>
+<p id=output2></p>
+<hr>
+<p>
+<font face=Georgia>
+General rule:</font><br><br>
+<font id=output4></font><br><br><br>
+<font face=Georgia>
+Solution:</font><br><br>
+<font id=output3>
+</font></p>
+<script type="text/javascript">
+document.getElementById("s").addEventListener("click",answer());
+function answer(){
+var d = parseFloat(eval(document.getElementById("d").value));
+var val = parseFloat(eval(document.getElementById("val").value));
+var term = parseFloat(document.getElementById("term").value);
+var o;if((term+'')==='1'){o="st"}else if((term+'')==='2'){o="nd"}else if((term+'')==='3'){o="rd"}else if((term+'').length<0||(term+'')==='NaN'||term===0){o=''}else{o="th"}var h=val;
+document.getElementById("output1").innerHTML="common difference (d) = " + d + "<br>term (n) = " + term + o + "<br>value of 1st term = " + val + "<br>";
+/*
+if(document.getElementById("add").checked){
+for(var i=0;i<(term-1);i++)h+=(d);
+} else {
+for(var i=0;i<(term-1);i++)h-=(d);
+}
+*/
+var _s_='',k='',p=0;for(var i=0;i<(term-1);i++)h+=(d);do{p+=1;var u=(val-d)>0?"+":"-",f=(val-d)<0?parseFloat(((val-d)+'').replace(/\-/g,'')):val-d;k="n = " + d + "n " + u + " " + f;_s_+="n"+p+" = " + d + "(" + p + ") " + u + " " + f + " = " + eval("((d * p) " + u + " f)") + "<br>";}while(p<term);
+document.getElementById("output4").innerHTML=k;
+document.getElementById("output3").innerHTML=_s_;
+document.getElementById("output2").innerHTML="Answer:<br>"+h;
+}
+</script>
+</body>
+</html>

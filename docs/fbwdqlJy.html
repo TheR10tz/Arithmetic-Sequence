@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>Arithmetic Sequence - Find the common difference</title>
+</head>
+<body>
+<h1>Arithmetic Sequence - Find the common difference (d)</h1>
+<br>
+Value 1: <input type="text" id="value1"><br>
+Value 2: <input type="text" id="value2"><br><br>
+(n) term (Value of 1)<input type="number" id="nterm1"><br>
+(n) term (Value of 2)<input type="number" id="nterm2"><br>
+<p><button onclick="submit()">Submit!</button>
+<hr><br>
+<p>Answer:</p><pre><div id="result"></div></pre><br>
+<hr><br>
+<p>Solution:</p><pre><div id="output"></div></pre><br>
+<script type="text/javascript">
+
+function submit() {
+
+var seq1 = parseFloat(eval(document.getElementById("value1").value));
+var seq2 = parseFloat(eval(document.getElementById("value2").value));
+var nterm1 = parseFloat(document.getElementById("nterm1").value);
+var nterm2 = parseFloat(document.getElementById("nterm2").value);
+var val = 1;
+
+var o;
+var k;
+
+o = seq2-seq1;
+k = nterm2-nterm1;
+
+var result = "d = "+o/k;
+document.getElementById("result")["innerHTML"]=result;
+
+var output;
+output = "<p>(an - a1)/(n - 1) = (an - ak)/(n - k)</p>(a"+nterm2+" - a"+nterm1+")/("+nterm2+" - "+nterm1+")<p>("+seq2+" - "+seq1+")/("+nterm2+" - "+nterm1+")<br><br>= "+(o + "/" + k + " = " + o/k)+"</p>";
+
+document.getElementById("output")["innerHTML"]=output;
+};
+
+</script>
+
+</body>
+</html>

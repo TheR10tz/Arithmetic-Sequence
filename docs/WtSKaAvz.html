@@ -1,1 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+<title>Arithmetic Sequence - Find the value of (n) term</title></head><body onload="answer()" onmouseout="answer()" onkeydown="answer()">
+<form id="s"><h1>Arithmetic Sequence - Find the value of <font face=Georgia>(n)</font> term</h1><small><i>if a(n) = x and a(n) = x</i></small><br><br>
+Value 1: <input type="text" id="value1"><br>
+Value 2: <input type="text" id="value2"><br><br>
+(n) term (Value of 1)<input type="number" id="nterm1"><br>
+(n) term (Value of 2)<input type="number" id="nterm2"><br><br>
+d: <input type="text" id="d"><br>
+term (n): <input type="number" id="term"><br><br>
+<p><input type="radio" name="c" id="solve" checked><small>Solve by the value of 1</small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="c"><small>Solve by the value of 2</small></p>
+<br>
+</form><hr><br>
+<font face=Georgia>
+Answer:</font>
+<p id=output2></p><br><br>
+<hr>
+<p>
+<font face=Georgia>
+Formula:</font><br><br>
+an = ak + (n - k)d
+<br><br><br>
+<font face=Georgia>
+Solution:</font><br><br>
+<font id=output3>
+</font></p>
+<script type="text/javascript">
+document.getElementById("s").addEventListener("click",answer());
+function answer(){
+var seq1 = parseFloat(eval(document.getElementById("value1").value));
+var seq2 = parseFloat(eval(document.getElementById("value2").value));
 
+var nterm1 = parseFloat(document.getElementById("nterm1").value);
+var nterm2 = parseFloat(document.getElementById("nterm2").value);
+
+var t = parseFloat(document.getElementById("term").value);
+var d = parseFloat(eval(document.getElementById("d").value));
+var s = (document.getElementById("solve").checked) ? seq1 : seq2;
+var n = (document.getElementById("solve").checked) ? nterm1 : nterm2;
+var a = s + ((t-n)*d);
+
+var x;
+
+x="a"+t+" = a"+n+" + ("+t+" - "+n+")"+d+"<br><br>a"+t+" = "+s+" + ("+(t-n)+")"+d+"<br><br>a"+t+" = "+s+" + "+((t-n)*d)+"<br><br>a"+t+" = "+a;
+document.getElementById("output3")["innerHTML"]=x;
+document.getElementById("output2")["innerHTML"]=a;
+}
+</script>
+</body>
+</html>
